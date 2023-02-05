@@ -56,17 +56,17 @@ List<ProductModel> products = [
 
   ]),
   ProductModel(name: 'Синий клатч', price: 3000, images: [
-    'assets/images/bags/blue_bag/blue_clutch 0.png',
+    'assets/images/bags/blue_clutch/blue_clutch 0.png',
 
 
   ]),
   ProductModel(name: 'Бежевая сумка', price: 4000, images: [
-    'assets/images/bags/blue_bag/blue_bag 0.png',
+    'assets/images/bags/brown_bag/brown_bag 0.png',
 
 
   ]),
   ProductModel(name: 'Красная сумка', price: 4500, images: [
-    'assets/images/bags/blue_bag/red_bag 1.png',
+    'assets/images/bags/red_bag/red_bag 1.png',
 
 
   ]),

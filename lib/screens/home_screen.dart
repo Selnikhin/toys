@@ -201,22 +201,22 @@ class _HomeScreenState extends State<HomeScreen> {
                           name: 'Мишка в розовом',
                           price: '3500'),
                       ProductView(
-                          image: 'assets/images/blue_bear/blue_bear 0.png',
-                          name: 'Мишка в синем комбезе',
-                          price: '3500'),
+                          image: 'assets/images/bags/red_bag/red_bag 1.png',
+                          name: 'Красная сумка',
+                          price: '4500'),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ProductView(
-                          image: 'assets/images/pink_bear/pink_bear 0.png',
-                          name: 'Мишка в розовом',
-                          price: '3500'),
+                          image: 'assets/images/bags/blue_clutch/blue_clutch 0.png',
+                          name: 'Синий клатч',
+                          price: '3000'),
                       ProductView(
-                          image: 'assets/images/blue_bear/blue_bear 0.png',
-                          name: 'Мишка в синем комбезе',
-                          price: '3500'),
+                          image: 'assets/images/bags/blue_bag/blue_bag 0.png',
+                          name: 'Голубая сумка',
+                          price: '4500'),
                     ],
                   ),
                 ],
