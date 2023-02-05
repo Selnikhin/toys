@@ -74,6 +74,11 @@ flutter:
     - assets/images/yellow_bear/
     - assets/images/beige_bear/
     - assets/fonts/
+    - assets/images/bags/blue_bag/
+    - assets/images/bags/blue_clutch/
+    - assets/images/bags/brown_bag/
+    - assets/images/bags/circular_bag/
+    - assets/images/bags/red_bag/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
