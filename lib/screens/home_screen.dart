@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../colors.dart';
 import '../models/top_produkt.dart';
+import '../widgets/product_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -131,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    height: size.height / 8 - 15,
+                    height: size.height / 8 - 45,
                     width: size.width / 2 - 30,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
@@ -141,19 +142,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         Image.asset(
                           'assets/images/bear blue.png',
                         ),
-                        // SizedBox(height: ),
                         TextButton(
                           onPressed: () {},
                           child: Text(
                             'Вязанные \n Игрушки',
-                            style: TextStyle(fontSize: 14),
+                            style: TextStyle(fontSize: 13),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Container(
-                    height: size.height / 8 - 15,
+                    height: size.height / 8 - 45,
                     width: size.width / 2 - 30,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
@@ -167,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           onPressed: () {},
                           child: Text(
                             'Вязанные \n Сумки',
-                            style: TextStyle(fontSize: 14),
+                            style: TextStyle(fontSize: 13),
                           ),
                         ),
                       ],
@@ -178,51 +178,48 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child:
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                // children: [
-                //   Column(
-                //     children: [
-                //       Container(
-                //         height: 220,
-                //         width: 190,
-                //         decoration: BoxDecoration(
-                //             borderRadius: BorderRadius.circular(15),
-                //             color: Colors.white,
-                //             image: DecorationImage(
-                //                 image: AssetImage(
-                //                     'assets/images/bags/red_bag/red_bag 1.png'),
-                //                 fit: BoxFit.cover)),
-                //         child: Align(
-                //           alignment: Alignment.topRight,
-                //           child: IconButton(
-                //             onPressed: () {},
-                //             icon: Icon(Icons.favorite_border_outlined,
-                //                 color: Colors.red, size: 25),
-                //           ),
-                //         ),
-                //       ),
-                //       SizedBox(height: 10),
-                //       Text.rich(TextSpan(
-                //         text: 'Красная сумка \n 4500 руб',
-                //         style: TextStyle(fontWeight: FontWeight.bold),
-                //       )),
-                //     ],
-                //   ),
-                //   SizedBox(height: 15),
-                //   Container(
-                //     height: 220,
-                //     width: 190,
-                //     decoration: BoxDecoration(
-                //         borderRadius: BorderRadius.circular(15),
-                //         color: Colors.white,
-                //         image: DecorationImage(
-                //             image: AssetImage(
-                //                 'assets/images/bags/red_bag/red_bag 1.png'),
-                //             fit: BoxFit.cover)),
-                //   ),
-                // ],
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ProductView(
+                          image: 'assets/images/beige_bear/beige_bear 0.png',
+                          name: 'Бежевый мишка',
+                          price: '3000'),
+                      ProductView(
+                          image: 'assets/images/blue_bear/blue_bear 0.png',
+                          name: 'Мишка в синем комбезе',
+                          price: '3000'),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ProductView(
+                          image: 'assets/images/pink_bear/pink_bear 0.png',
+                          name: 'Мишка в розовом',
+                          price: '3500'),
+                      ProductView(
+                          image: 'assets/images/blue_bear/blue_bear 0.png',
+                          name: 'Мишка в синем комбезе',
+                          price: '3500'),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ProductView(
+                          image: 'assets/images/pink_bear/pink_bear 0.png',
+                          name: 'Мишка в розовом',
+                          price: '3500'),
+                      ProductView(
+                          image: 'assets/images/blue_bear/blue_bear 0.png',
+                          name: 'Мишка в синем комбезе',
+                          price: '3500'),
+                    ],
+                  ),
+                ],
               ),
             )
           ],

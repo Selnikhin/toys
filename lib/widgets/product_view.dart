@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 
 class ProductView extends StatelessWidget {
-  final String image, title, price;
+  final String image, name, price;
   final bool? isFav;
   final Function()? onPressed;
   const ProductView(
       {super.key,
         required this.image,
-        required this.title,
+        required this.name,
         required this.price,
         this.isFav = false,
         this.onPressed});
@@ -17,10 +17,10 @@ class ProductView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          height: 220,
+          height: 200,
           width: 190,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
@@ -47,18 +47,18 @@ class ProductView extends StatelessWidget {
         ),
         Text.rich(
           TextSpan(
-              text: "$title\n",
+              text: "$name\n",
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.w400),
               children: [
                 TextSpan(
-                  text: "\$$price",
+                  text: "$price руб",
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      color: Colors.white,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w600),
+                      color: Colors.blue,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600, ),
                 ),
               ]),
         )
