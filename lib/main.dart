@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:toys/screens/collection_page.dart';
 import 'package:toys/screens/home_screen.dart';
 
 import 'colors.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
        scaffoldBackgroundColor: lightBlue,
       ),
 
-      home:  HomeScreen(),
+      home:  CollectionPage(),
     );
   }
 }
