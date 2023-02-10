@@ -69,6 +69,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/blue_bear/
+    - assets/images/rabbit_and_bear/
     - assets/images/brown_bear/
     - assets/images/pink_bear/
     - assets/images/yellow_bear/
@@ -79,6 +80,7 @@ flutter:
     - assets/images/bags/brown_bag/
     - assets/images/bags/circular_bag/
     - assets/images/bags/red_bag/
+    - assets/images/bags/backpack/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -100,11 +102,9 @@ flutter:
       fonts:
         - asset: assets/fonts/Marutya.ttf
 
-
-
-
-
-
+    - family: Sriracha
+      fonts:
+      - asset: assets/fonts/Sriracha.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

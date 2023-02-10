@@ -3,11 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../colors.dart';
-import '../models/top_produkt.dart';
+import '../models/top_product.dart';
+import '../widgets/appbar.dart';
+import '../widgets/custom_navbar.dart';
 import '../widgets/product_view.dart';
+import 'collection_toys_page.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  static const String routeName = '/';
+
+  static Route route() {
+    return MaterialPageRoute(
+      settings: RouteSettings(name: routeName),
+      builder: (_) => HomeScreen(),
+    );
+  }
+
+
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -19,53 +31,30 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: lightBlue,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            FontAwesomeIcons.barsStaggered,
-            color: Colors.black,
-          ),
-        ),
-        actions: [
-          const Spacer(),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              FontAwesomeIcons.heart,
-              color: Colors.red,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              FontAwesomeIcons.cartShopping,
-              color: Colors.black,
-            ),
-          ),
-        ],
-      ),
+      appBar: AppBarCust(title: ''),
+      bottomNavigationBar: CustomNavBar(),
+
       body: SingleChildScrollView(
         child: Column(
           children: [
             Row(
               children: [
                 Container(
-                  height: 150,
-                  width: 220,
+                  height: size.height /8,
+                  width: size.width/2,
                   child: Image.asset(
-                    'assets/images/Knitted Dreams.png',
+                    'assets/images/Knitted Dreams.png',fit: BoxFit.cover,
                   ),
                 ),
                 Container(
                   child: Text(
                     'Вязанные\n Фантазии',
                     style: TextStyle(
-                      fontSize: 35,
+                      fontSize: 30,
                     ),
                   ),
                 )
@@ -74,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Stack(
               children: [
                 Container(
-                  height: size.height / 2.4 - 40,
+                  height: size.height / 2 -100,
                   width: size.width - 40,
                   child: CarouselSlider(
                     items: listTopProduct
@@ -84,8 +73,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Image.asset(
                               item['image_path'],
                               fit: BoxFit.cover,
-                              width: size.width,
-                              height: size.height,
+                              width: size.width  ,
+                              height: size.height ,
                             ),
                           ),
                         )
@@ -143,7 +132,9 @@ class _HomeScreenState extends State<HomeScreen> {
                           'assets/images/bear blue.png',
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context,'/collection_toys');
+                          },
                           child: Text(
                             'Вязанные \n Игрушки',
                             style: TextStyle(fontSize: 13),
@@ -164,7 +155,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           'assets/images/red_bag 0.png',
                         ),
                         TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/collection_bags');
+
+                          },
                           child: Text(
                             'Вязанные \n Сумки',
                             style: TextStyle(fontSize: 13),
@@ -175,7 +169,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+
             ),
+            Text('Часто покупают',style: TextStyle( fontSize: 18),),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
@@ -196,10 +192,15 @@ class _HomeScreenState extends State<HomeScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ProductView(
-                          image: 'assets/images/pink_bear/pink_bear 0.png',
-                          name: 'Мишка в розовом',
-                          price: '3500'),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/pink_bear');
+                        },
+                        child: ProductView(
+                            image: 'assets/images/pink_bear/pink_bear 0.png',
+                            name: 'Мишка в розовом',
+                            price: '3500'),
+                      ),
                       ProductView(
                           image: 'assets/images/bags/red_bag/red_bag 1.png',
                           name: 'Красная сумка',
@@ -210,7 +211,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ProductView(
-                          image: 'assets/images/bags/blue_clutch/blue_clutch 0.png',
+                          image:
+                              'assets/images/bags/blue_clutch/blue_clutch 0.png',
                           name: 'Синий клатч',
                           price: '3000'),
                       ProductView(
