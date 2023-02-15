@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:toys/config/app_router.dart';
-import 'package:toys/screens/collection_bags_page.dart';
-import 'package:toys/screens/collection_toys_page.dart';
+
+
 import 'package:toys/screens/home_screen.dart';
+
 
 import 'colors.dart';
 

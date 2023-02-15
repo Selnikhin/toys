@@ -1,67 +1,136 @@
-class ProductModel {
-  final String name;
-  final double price;
-  final List<String> images;
+import 'package:equatable/equatable.dart';
 
-  ProductModel({
+class Product extends Equatable {
+  final String name;
+  final num price;
+  final String category;
+  final bool isPopular;
+  final String images;
+
+   Product({
     required this.name,
     required this.price,
     required this.images,
+    required this.category,
+    required this.isPopular,
   });
+
+  @override
+   List<Object?> get props => [name, price, images, category, isPopular];
+
+   static List<Product> products =[
+    Product(
+      category: 'Вязанные игрушки',
+      isPopular: true,
+      name: 'Бежевый мишка',
+      price: 3000,
+      images:
+      'assets/images/beige_bear/beige_bear 0.png',
+
+    ),
+    Product(
+      category: 'Вязанные игрушки',
+      isPopular: true,
+      name: 'Мишка в комбезе',
+      price: 3500,
+      images:
+      'assets/images/blue_bear/blue_bear 0.png',
+
+    ),
+    Product(
+      category: 'Вязанные игрушки',
+      isPopular: false,
+      name: 'Коричневый мишка',
+      price: 2000,
+      images:
+      'assets/images/brown_bear/brown_bear 0.png',
+
+    ),
+    Product(
+      category: 'Вязанные игрушки',
+      isPopular: true,
+      name: 'Серый зайка',
+      price: 3000,
+      images:
+      'assets/images/grey_rabbit/grey_rabbit 0.png',
+
+    ),
+    Product(
+      category: 'Вязанные игрушки',
+      isPopular: true,
+      name: 'Мишка в платице',
+      price: 3500,
+      images:
+      'assets/images/pink_bear/pink_bear 0.png',
+
+    ),
+    Product(
+      category: 'Вязанные игрушки',
+      isPopular: true,
+      name: 'Зайка и Мишка',
+      price: 3500,
+      images:
+      'assets/images/rabbit_and_bear/rabbit_and_bear 0.png',
+
+    ),
+    Product(
+      category: 'Вязанные игрушки',
+      isPopular: true,
+      name: 'Желтый мишка',
+      price: 2000,
+      images:
+      'assets/images/yellow_bear/yellow_bear 0.png',
+
+    ),
+    Product(
+      category: 'Вязанные сумки',
+      isPopular: true,
+      name: 'Голубая сумка',
+      price: 4500,
+      images:
+      'assets/images/bags/blue_bag/blue_bag 0.png',
+    ),
+    Product(
+      category: 'Вязанные сумки',
+      isPopular: true,
+      name: 'Синий клатч',
+      price: 3000,
+      images:
+      'assets/images/bags/blue_clutch/blue_clutch 0.png',
+    ),
+    Product(
+      category: 'Вязанные сумки',
+      isPopular: true,
+      name: 'Бежевая сумка',
+      price: 4000,
+      images:
+      'assets/images/bags/brown_bag/brown_bag 0.png',
+    ),
+    Product(
+      category: 'Вязанные сумки',
+      isPopular: true,
+      name: 'Красная сумка',
+      price: 4500,
+      images:
+      'assets/images/bags/red_bag/red_bag 1.png',
+    ),
+    Product(
+      category: 'Вязанные сумки',
+      isPopular: true,
+      name: 'Круглая сумка',
+      price: 3500,
+      images:
+      'assets/images/bags/circular_bag/circular_bag 0.png',
+    ),
+    Product(
+      category: 'Вязанные сумки',
+      isPopular: true,
+      name: 'Рюкзак',
+      price: 3500,
+      images:
+      'assets/images/bags/backpack/backpack 0.png',
+    ),
+  ];
+
 }
 
-List<ProductModel> products = [
-  ProductModel(name: 'Бежевый мишка', price: 3000, images: [
-    'beige_bear/beige_bear 0.png',
-    'beige_bear/beige_bear 1.png',
-    'beige_bear/beige_bear 2.png',
-  ]),
-  ProductModel(name: 'Мишка в синем комбезе', price: 3500, images: [
-    'blue_bear/blue_bear 0.png',
-    'blue_bear/blue_bear 1.png',
-    'blue_bear/blue_bear 2.png',
-  ]),
-  ProductModel(name: 'Коричневый мишка', price: 2000, images: [
-    'brown_bear/brown_bear 0.png',
-    'brown_bear/brown_bear 1.png',
-    'brown_bear/brown_bear 2.png',
-  ]),
-  ProductModel(name: 'Серый зайка', price: 3000, images: [
-    'grey_rabbit/grey_rabbit 0.png',
-    'grey_rabbit/grey_rabbit 1.png',
-    'grey_rabbit/grey_rabbit 2.png',
-  ]),
-  ProductModel(name: 'Мишка в розовом', price: 3500, images: [
-    'pink_bear/pink_bear 0.png',
-    'pink_bear/pink_bear 1.png',
-    'pink_bear/pink_bear 2.png',
-  ]),
-  ProductModel(name: 'Зайка и Мишка', price: 3500, images: [
-    'rabbit_and_bear/rabbit_and_bear 0.png',
-    'rabbit_and_bear/rabbit_and_bear 1.png',
-  ]),
-  ProductModel(name: 'Желтенький Мишка', price: 2000, images: [
-    'yellow_bear/yellow_bear 0.png',
-    'yellow_bear/yellow_bear 1.png',
-    'yellow_bear/yellow_bear 2.png',
-    'yellow_bear/yellow_bear 3.png',
-  ]),
-  ProductModel(name: 'Голубая сумка', price: 4500, images: [
-    'assets/images/bags/blue_bag/blue_bag 0.png',
-  ]),
-  ProductModel(name: 'Синий клатч', price: 3000, images: [
-    'assets/images/bags/blue_clutch/blue_clutch 0.png',
-  ]),
-  ProductModel(name: 'Бежевая сумка', price: 4000, images: [
-    'assets/images/bags/brown_bag/brown_bag 0.png',
-  ]),
-  ProductModel(name: 'Красная сумка', price: 4500, images: [
-    'assets/images/bags/red_bag/red_bag 1.png',
-  ]),
-  ProductModel(name: 'Круглая сумка', price: 3500, images: [
-    'assets/images/bags/circular_bag/circular_bag 0.png',
-  ]),
-  ProductModel(name: 'Рюкзак', price: 3500, images: [
-    'assets/images/bags/backpack/backpack 0.png',
-  ]),
-];

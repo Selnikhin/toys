@@ -20,8 +20,8 @@ class ProductView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
-          height: 200,
-          width: 190,
+          height: 190,
+          width: 180,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: Colors.white,
