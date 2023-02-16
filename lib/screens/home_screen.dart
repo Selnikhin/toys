@@ -48,25 +48,24 @@ class HomeScreen extends StatelessWidget {
               )
             ],
           ),
-          Container(
-            child: CarouselSlider(
-              options: CarouselOptions(
-                aspectRatio: 1.5,
-                viewportFraction: 0.9,
-                enlargeCenterPage: true,
-                enlargeStrategy: CenterPageEnlargeStrategy.height,
-                autoPlay: true,
-              ),
-              items: Categories.categoriesProd
-                  .map((category) => CarouselCard(category: category))
-                  .toList(),
+          SectionTitle(title: 'Каталоги товаров'),
+          CarouselSlider(
+            options: CarouselOptions(
+              aspectRatio: 1.5,
+              viewportFraction: 0.9,
+              enlargeCenterPage: true,
+              enlargeStrategy: CenterPageEnlargeStrategy.height,
+              autoPlay: true,
             ),
+            items: Categories.categoriesProd
+                .map((category) => CarouselCard(category: category))
+                .toList(),
           ),
           SizedBox(height: 5),
 
-          SectionTitle(title: 'хиты продаж'),
+          SectionTitle(title: 'Хиты продаж'),
 
-          ProductCarousel(products: Product.products.where((product) => product.isPopular).toList(),
+          ProductCarousel(products: Products.products_all.where((product) => product.isPopular).toList(),
           ),
         ],
       ),

@@ -11,7 +11,7 @@ class CustomNavBar extends StatelessWidget {
       child: Container(
 
 
-        height: 50,
+        height: 45,
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(

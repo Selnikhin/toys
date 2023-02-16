@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 
-class Product extends Equatable {
+class Products extends Equatable {
   final String name;
   final num price;
   final String category;
   final bool isPopular;
   final String images;
 
-   Product({
+   Products({
     required this.name,
     required this.price,
     required this.images,
@@ -18,8 +18,8 @@ class Product extends Equatable {
   @override
    List<Object?> get props => [name, price, images, category, isPopular];
 
-   static List<Product> products =[
-    Product(
+   static List<Products> products_all =[
+    Products(
       category: 'Вязанные игрушки',
       isPopular: true,
       name: 'Бежевый мишка',
@@ -28,7 +28,7 @@ class Product extends Equatable {
       'assets/images/beige_bear/beige_bear 0.png',
 
     ),
-    Product(
+    Products(
       category: 'Вязанные игрушки',
       isPopular: true,
       name: 'Мишка в комбезе',
@@ -37,7 +37,7 @@ class Product extends Equatable {
       'assets/images/blue_bear/blue_bear 0.png',
 
     ),
-    Product(
+    Products(
       category: 'Вязанные игрушки',
       isPopular: false,
       name: 'Коричневый мишка',
@@ -46,7 +46,7 @@ class Product extends Equatable {
       'assets/images/brown_bear/brown_bear 0.png',
 
     ),
-    Product(
+    Products(
       category: 'Вязанные игрушки',
       isPopular: true,
       name: 'Серый зайка',
@@ -55,7 +55,7 @@ class Product extends Equatable {
       'assets/images/grey_rabbit/grey_rabbit 0.png',
 
     ),
-    Product(
+    Products(
       category: 'Вязанные игрушки',
       isPopular: true,
       name: 'Мишка в платице',
@@ -64,7 +64,7 @@ class Product extends Equatable {
       'assets/images/pink_bear/pink_bear 0.png',
 
     ),
-    Product(
+    Products(
       category: 'Вязанные игрушки',
       isPopular: true,
       name: 'Зайка и Мишка',
@@ -73,7 +73,7 @@ class Product extends Equatable {
       'assets/images/rabbit_and_bear/rabbit_and_bear 0.png',
 
     ),
-    Product(
+    Products(
       category: 'Вязанные игрушки',
       isPopular: true,
       name: 'Желтый мишка',
@@ -82,7 +82,7 @@ class Product extends Equatable {
       'assets/images/yellow_bear/yellow_bear 0.png',
 
     ),
-    Product(
+    Products(
       category: 'Вязанные сумки',
       isPopular: true,
       name: 'Голубая сумка',
@@ -90,7 +90,7 @@ class Product extends Equatable {
       images:
       'assets/images/bags/blue_bag/blue_bag 0.png',
     ),
-    Product(
+    Products(
       category: 'Вязанные сумки',
       isPopular: true,
       name: 'Синий клатч',
@@ -98,7 +98,7 @@ class Product extends Equatable {
       images:
       'assets/images/bags/blue_clutch/blue_clutch 0.png',
     ),
-    Product(
+    Products(
       category: 'Вязанные сумки',
       isPopular: true,
       name: 'Бежевая сумка',
@@ -106,7 +106,7 @@ class Product extends Equatable {
       images:
       'assets/images/bags/brown_bag/brown_bag 0.png',
     ),
-    Product(
+    Products(
       category: 'Вязанные сумки',
       isPopular: true,
       name: 'Красная сумка',
@@ -114,7 +114,7 @@ class Product extends Equatable {
       images:
       'assets/images/bags/red_bag/red_bag 1.png',
     ),
-    Product(
+    Products(
       category: 'Вязанные сумки',
       isPopular: true,
       name: 'Круглая сумка',
@@ -122,7 +122,7 @@ class Product extends Equatable {
       images:
       'assets/images/bags/circular_bag/circular_bag 0.png',
     ),
-    Product(
+    Products(
       category: 'Вязанные сумки',
       isPopular: true,
       name: 'Рюкзак',
@@ -130,6 +130,38 @@ class Product extends Equatable {
       images:
       'assets/images/bags/backpack/backpack 0.png',
     ),
+     Products(
+       category: 'Подарочные наборы',
+       isPopular: true,
+       name: 'Набор для мальчика N1',
+       price: 1490,
+       images:
+       'assets/images/podarok/Boys_1/podarochnyj-nabor-dlya-malchika-plyushevyj-medved-1-1.jpeg',
+     ),
+     Products(
+       category: 'Подарочные наборы',
+       isPopular: true,
+       name: 'Набор для мальчика N2',
+       price: 1490,
+       images:
+       'assets/images/podarok/Boys_2/photo_2021-10-19_21-49-00.jpeg',
+     ),
+     Products(
+       category: 'Подарочные наборы',
+       isPopular: true,
+       name: 'Набор для девочки N1',
+       price: 1490,
+       images:
+       'assets/images/podarok/Girls_1/podarochnyj-nabor-dlya-devochki-plyusheyj-mishka-1.jpeg',
+     ),
+     Products(
+       category: 'Подарочные наборы',
+       isPopular: true,
+       name: 'Набор для девочки N2',
+       price: 1490,
+       images:
+       'assets/images/podarok/Girls_2/podarochnyj-nabor-dlya-devochki-plyusheyj-medved-1.jpeg',
+     ),
   ];
 
 }

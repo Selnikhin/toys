@@ -4,7 +4,7 @@ import 'package:toys/widgets/product_card.dart';
 import '../models/product_model.dart';
 
 class ProductCarousel extends StatelessWidget {
-  final List<Product> products;
+  final List<Products> products;
 
   const ProductCarousel({Key? key,required this.products,
   }) : super(key: key);

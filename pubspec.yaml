@@ -85,7 +85,10 @@ flutter:
     - assets/images/bags/red_bag/
     - assets/images/bags/backpack/
     - assets/images/tricotage/
-    - assets/images/podarok/
+    - assets/images/podarok/Boys_1/
+    - assets/images/podarok/Boys_2/
+    - assets/images/podarok/Girls_1/
+    - assets/images/podarok/Girls_2/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
