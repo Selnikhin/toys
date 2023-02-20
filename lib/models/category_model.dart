@@ -25,7 +25,7 @@ class Categories extends Equatable {
         image: 'assets/images/tricotage/korzina-karmashek-na-stul-seryj-1.jpeg'),
     Categories(
         name: "Подарочные наборы",
-        image: 'assets/images/podarok/podarochnyj-nabor-dlya-malchika-plyushevyj-medved-1-1.jpeg'),
+        image: 'assets/images/podarok/Boys_1/podarochnyj-nabor-dlya-malchika-plyushevyj-medved-1-1.jpeg'),
 
   ];
 }

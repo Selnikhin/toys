@@ -25,21 +25,9 @@ class AppBarCust extends StatelessWidget with PreferredSizeWidget {
          ),
        ),
      ),
-      actions: [
-        IconButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/wishlist');
-          },
-          icon: const Icon(
-            FontAwesomeIcons.heart,
-            color: Colors.red,
-          ),
-        ),
-      ],
     );
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(50);
 }

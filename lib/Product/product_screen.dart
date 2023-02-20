@@ -1,8 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:toys/bloc/wishlist_blocs/wishlist_bloc.dart';
 import 'package:toys/models/product_model.dart';
 
-import '../models/category_model.dart';
 import '../widgets/appbar.dart';
 import '../widgets/carousel_card.dart';
 import '../widgets/custom_navbar.dart';
@@ -24,83 +25,71 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return Scaffold(
+    return Scaffold(bottomSheet: Container(
+      width: size.width,child: TextButton(
+      onPressed: (){}, child: Text('кнопка'),
+      
+    ),
+    ),
       appBar: AppBarCust(title: product.name),
-      bottomNavigationBar: BottomAppBar(
-        color: Colors.grey[800],
-        child: Container(
-          height: 70,
-          child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.favorite,
-                    color: Colors.white,
-                  )),
-              ElevatedButton(
-                  onPressed: () {},
-                  child: Text('Добавить в корзину',style: TextStyle(color: Colors.black),),
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.white),),
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.menu,
-                    color: Colors.white,
-                  )),
-            ],
-          ),
-        ),
-      ),
+      bottomNavigationBar: CustomNavBar(),
       body: ListView(
         children: [
-          CarouselSlider(
-            options: CarouselOptions(
-              aspectRatio: 1.1,
-              viewportFraction: 0.9,
-              enlargeCenterPage: true,
-              enlargeStrategy: CenterPageEnlargeStrategy.height,
-              autoPlay: true,
-            ),
-            items: [
-              CarouselCard(
-                product: product,
-              ),
+          Stack(
+            children: [
+              CarouselSlider(
+                options: CarouselOptions(
+                  aspectRatio: 1.1,
+                  viewportFraction: 0.9,
+                  enlargeCenterPage: true,
+                  enlargeStrategy: CenterPageEnlargeStrategy.height,
+                  autoPlay: true,
+                ),
+                items: [
+                  CarouselCard(
+                    product: product,
+                  ),
+                ],
+              ),Positioned(right: 50,top: 10,
+                  child: IconButton(
+                  onPressed: (){ context
+                      .read<WishlistBloc>()
+                      .add(AddPrToWishlist(product));
+                  final snackBar =
+                  SnackBar(content: Text('Добавленно в избранное'));
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+
+                  },icon: Icon(Icons.favorite_border_outlined,size: 35,color: Colors.red,)),
+
+                    ),
             ],
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Stack(
               children: [
-                Container(
-                  margin: EdgeInsets.all(5),
-                  width: size.width - 10,
-                  height: size.height / 18,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.purpleAccent,
-                  ),
-                  alignment: Alignment.center,
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Text(
-                          product.name,
-                          style: TextStyle(color: Colors.white, fontSize: 23),
-                        ),
-                        Text(
-                          '${product.price} Руб',
-                          style: TextStyle(color: Colors.white, fontSize: 18),
-                        ),
-                      ],
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.all(5),
+                    width: size.width ,
+                    height: size.height / 28,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.purpleAccent,
+                    ),
+                    alignment: Alignment.center,
+                    child: Center(
+                      child: Text(
+                        '${product.price} Руб',
+                        style: TextStyle(color: Colors.white, fontSize:20),
+                      ),
                     ),
                   ),
                 ),
               ],
             ),
           ),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: ExpansionTile(
