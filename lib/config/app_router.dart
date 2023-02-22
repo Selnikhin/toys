@@ -18,8 +18,8 @@ class AppRouter {
       case HomeScreen.routeName:
         return HomeScreen.route();
 
-      case CartPage.routeName:
-        return CartPage.route();
+      case CartScreen.routeName:
+        return CartScreen.route();
       case ProductScreen.routeName:
         return ProductScreen.route(product: settings.arguments as  Products);
       case CatalogScreen.routeName:

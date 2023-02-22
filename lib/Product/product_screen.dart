@@ -28,7 +28,6 @@ class ProductScreen extends StatelessWidget {
     return Scaffold(bottomSheet: Container(
       width: size.width,child: TextButton(
       onPressed: (){}, child: Text('кнопка'),
-      
     ),
     ),
       appBar: AppBarCust(title: product.name),

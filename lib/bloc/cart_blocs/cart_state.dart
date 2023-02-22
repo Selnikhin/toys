@@ -1,10 +1,10 @@
 part of 'cart_bloc.dart';
 
-@immutable
-abstract class CartState extends Equatable {
-  const CartState();
-}
-
+// @immutable
+// abstract class CartState extends Equatable {
+//   const CartState();
+// }
+//
 // class CartLoading extends CartState {
 //
 //   @override
