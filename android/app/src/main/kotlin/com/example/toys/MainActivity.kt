@@ -1,4 +1,4 @@
-package com.example.toys
+package com.AlexS.example.toys
 
 import io.flutter.embedding.android.FlutterActivity
 

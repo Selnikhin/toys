@@ -1,20 +1,24 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toys/models/category_model.dart';
 import 'package:toys/widgets/product_carusel.dart';
 import 'package:toys/widgets/section_title.dart';
+import '../bloc/category_blocs/category_bloc.dart';
+import '../bloc/product_blocs/product_bloc.dart';
 import '../models/product_model.dart';
 import '../widgets/appbar.dart';
 import '../widgets/carousel_card.dart';
 import '../widgets/custom_navbar.dart';
 
-
 class HomeScreen extends StatelessWidget {
   static const String routeName = '/';
+
   static Route route() {
     return MaterialPageRoute(
       settings: RouteSettings(name: routeName),
-        builder: (_) => HomeScreen(),);
+      builder: (_) => HomeScreen(),
+    );
   }
 
   const HomeScreen({super.key});
@@ -49,27 +53,52 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
           SectionTitle(title: 'Каталоги товаров'),
-          CarouselSlider(
-            options: CarouselOptions(
-              aspectRatio: 1.5,
-              viewportFraction: 0.9,
-              enlargeCenterPage: true,
-              enlargeStrategy: CenterPageEnlargeStrategy.height,
-              autoPlay: true,
-            ),
-            items: Categories.categoriesProd
-                .map((category) => CarouselCard(category: category))
-                .toList(),
+          BlocBuilder<CategoryBloc, CategoryState>(
+            builder: (context, state) {
+              if (state is CategoryLoading) {
+                return Center(child: CircularProgressIndicator());
+              }
+              if (state is CategoryLoaded) {
+                return CarouselSlider(
+                  options: CarouselOptions(
+                    aspectRatio: 1.5,
+                    viewportFraction: 0.9,
+                    enlargeCenterPage: true,
+                    enlargeStrategy: CenterPageEnlargeStrategy.height,
+                    autoPlay: true,
+                  ),
+                  items: state.categories
+                      .map((category) => CarouselCard(category: category))
+                      .toList(),
+                );
+              } else {
+                return Text('ошибка');
+              }
+            },
           ),
           SizedBox(height: 5),
-
           SectionTitle(title: 'Хиты продаж'),
-
-          ProductCarousel(products: Products.products_all.where((product) => product.isPopular).toList(),
+          BlocBuilder<ProductBloc, ProductState>(
+            builder: (context, state) {
+              if (state is ProductLoading) {
+                return Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              if (state is ProductLoaded) {
+                return
+                  ProductCarousel(
+                  products: state.products
+                      .where((product) => product.isPopular)
+                      .toList(),
+                );
+              } else {
+                return Text('error');
+              }
+            },
           ),
         ],
       ),
     );
   }
 }
-

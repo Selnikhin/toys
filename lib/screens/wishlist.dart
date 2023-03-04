@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toys/bloc/wishlist_blocs/wishlist_bloc.dart';
-import 'package:toys/models/product_model.dart';
+
 
 import '../widgets/appbar.dart';
 import '../widgets/custom_navbar.dart';

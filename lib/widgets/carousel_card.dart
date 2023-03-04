@@ -3,8 +3,8 @@ import 'package:toys/models/product_model.dart';
 import '../models/category_model.dart';
 
 class CarouselCard extends StatelessWidget {
-  final Categories? category;
-  final Products? product;
+  final Category? category;
+  final Product? product;
 
   const CarouselCard({
     Key? key,
@@ -30,7 +30,7 @@ class CarouselCard extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(5.0)),
             child: Stack(
               children: <Widget>[
-                Image.asset(product == null ? category!.image : product!.images,
+                Image.network(product == null ? category!.imageUrl : product!.images,
                     fit: BoxFit.cover, width: 1000.0),
                 Positioned(
                   bottom: 0.0,
