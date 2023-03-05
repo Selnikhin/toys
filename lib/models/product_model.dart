@@ -25,7 +25,7 @@ class Products extends Equatable {
       name: 'Бежевый мишка',
       price: 3000,
       images:
-      'assets/images/beige_bear/beige_bear 0.png',
+      'assets/images/toys/beige_bear/beige_bear 0.png',
 
     ),
     Products(
@@ -34,7 +34,7 @@ class Products extends Equatable {
       name: 'Мишка в комбезе',
       price: 3500,
       images:
-      'assets/images/blue_bear/blue_bear 0.png',
+      'assets/images/toys/blue_bear/blue_bear 0.png',
 
     ),
     Products(
@@ -43,7 +43,7 @@ class Products extends Equatable {
       name: 'Коричневый мишка',
       price: 2000,
       images:
-      'assets/images/brown_bear/brown_bear 0.png',
+      'assets/images/toys/brown_bear/brown_bear 0.png',
 
     ),
     Products(
@@ -52,7 +52,7 @@ class Products extends Equatable {
       name: 'Серый зайка',
       price: 3000,
       images:
-      'assets/images/grey_rabbit/grey_rabbit 0.png',
+      'assets/images/toys/grey_rabbit/grey_rabbit 0.png',
 
     ),
     Products(
@@ -61,7 +61,7 @@ class Products extends Equatable {
       name: 'Мишка в платице',
       price: 3500,
       images:
-      'assets/images/pink_bear/pink_bear 0.png',
+      'assets/images/toys/pink_bear/pink_bear 0.png',
 
     ),
     Products(
@@ -70,7 +70,7 @@ class Products extends Equatable {
       name: 'Зайка и Мишка',
       price: 3500,
       images:
-      'assets/images/rabbit_and_bear/rabbit_and_bear 0.png',
+      'assets/images/toys/rabbit_and_bear/rabbit_and_bear 0.png',
 
     ),
     Products(
@@ -79,7 +79,7 @@ class Products extends Equatable {
       name: 'Желтый мишка',
       price: 2000,
       images:
-      'assets/images/yellow_bear/yellow_bear 0.png',
+      'assets/images/toys/yellow_bear/yellow_bear 0.png',
 
     ),
     Products(

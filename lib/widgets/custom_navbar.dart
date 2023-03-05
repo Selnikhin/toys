@@ -9,16 +9,15 @@ class CustomNavBar extends StatelessWidget {
     return BottomAppBar(
       color: Colors.grey[800],
       child: Container(
-
-
         height: 45,
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             IconButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/');
+                  Navigator.popUntil(context, (route) => route.isCurrent && route.settings.name != '/' ? false : true);
                 },
-                icon: Icon(FontAwesomeIcons.house,color: Colors.white)),
+                icon: Icon(FontAwesomeIcons.house, color: Colors.white)),
             IconButton(
               onPressed: () {
                 Navigator.pushNamed(context, '/wishlist');
@@ -32,12 +31,12 @@ class CustomNavBar extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, '/cart');
                 },
-                icon: Icon(FontAwesomeIcons.cartShopping,color: Colors.white)),
+                icon: Icon(FontAwesomeIcons.cartShopping, color: Colors.white)),
             IconButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/user');
                 },
-                icon: Icon(FontAwesomeIcons.user,color: Colors.white)),
+                icon: Icon(FontAwesomeIcons.user, color: Colors.white)),
           ],
         ),
       ),
