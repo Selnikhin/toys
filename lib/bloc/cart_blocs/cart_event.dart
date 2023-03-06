@@ -10,17 +10,17 @@ class LoadCart extends CartEvent {
 }
 
 class AddProduct extends CartEvent {
-  final Products products_all;
-  const AddProduct(this.products_all);
+  final Product products;
+  const AddProduct(this.products);
 
   @override
-  List<Object?> get props => [products_all];
+  List<Object?> get props => [products];
 }
 class RemoveProduct extends CartEvent{
-  final Products products_all;
-  const RemoveProduct(this.products_all);
+  final Product products;
+  const RemoveProduct(this.products);
 
   @override
   // TODO: implement props
-  List<Object?> get props =>  [products_all];
+  List<Object?> get props =>  [products];
 }

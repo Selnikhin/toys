@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        // BlocProvider(create: (_) => CartBloc()..add(LoadCart())),
+         BlocProvider(create: (_) => CartBloc()..add(LoadCart())),
         // BlocProvider(create: (context)=>CheckoutBloc(
         //   cartBloc: context.read<CartBloc>(),
         //   checkoutRespository: CheckoutRespository())),
@@ -30,7 +30,8 @@ class MyApp extends StatelessWidget {
         title: 'Toys',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          fontFamily: 'Marutya',
+          fontFamily: 'Sriracha',
+          bottomSheetTheme: BottomSheetThemeData(backgroundColor: Colors.black.withOpacity(0) ),
           primaryColor: lightBlue,
           scaffoldBackgroundColor: lightBlue,
         ),

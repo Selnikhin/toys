@@ -4,7 +4,7 @@ import 'package:toys/widgets/product_card.dart';
 import '../models/product_model.dart';
 
 class ProductCarousel extends StatelessWidget {
-  final List<Products> products;
+  final List<Product> products;
 
   const ProductCarousel({Key? key,required this.products,
   }) : super(key: key);
@@ -12,7 +12,7 @@ class ProductCarousel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  SizedBox(
-      height: 210,
+      height: 230,
       child: ListView.builder(
         shrinkWrap: true,
         padding: EdgeInsets.symmetric(
@@ -21,10 +21,10 @@ class ProductCarousel extends StatelessWidget {
         ),
         scrollDirection: Axis.horizontal,
 
-        itemCount: products.length,
+        itemCount: products.length, // products[index].images.length
         itemBuilder: (context, index){
           return Padding(padding: EdgeInsets.only(right: 5),
-            child: ProductCard( product: products[index]),);
+            child: ProductCard( products: products[index]),);
         },
       ),
     );

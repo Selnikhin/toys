@@ -4,7 +4,7 @@ import '../models/category_model.dart';
 
 class CarouselCard extends StatelessWidget {
   final Categories? category;
-  final Products? product;
+  final Product? product;
 
   const CarouselCard({
     Key? key,

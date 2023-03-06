@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           Row(
             children: [
               Container(
-                height: size.height / 8,
+                height: size.height / 8 -20,
                 width: size.width / 2,
                 child: Image.asset(
                   'assets/images/Knitted Dreams.png',
@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
               Container(
                 child: Text(
                   'Вязанные\n Фантазии',
-                  style: TextStyle(
+                  style: TextStyle(fontFamily: 'Marutya',
                     fontSize: 34,
                   ),
                 ),
@@ -61,11 +61,11 @@ class HomeScreen extends StatelessWidget {
                 .map((category) => CarouselCard(category: category))
                 .toList(),
           ),
-          SizedBox(height: 5),
+         // SizedBox(height: 5),
 
           SectionTitle(title: 'Хиты продаж'),
 
-          ProductCarousel(products: Products.products_all.where((product) => product.isPopular).toList(),
+          ProductCarousel(products: Product.products.where((product) => product.isPopular).toList(),
           ),
         ],
       ),

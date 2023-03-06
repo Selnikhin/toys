@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toys/bloc/wishlist_blocs/wishlist_bloc.dart';
-import 'package:toys/models/product_model.dart';
 
 import '../widgets/appbar.dart';
 import '../widgets/custom_navbar.dart';
@@ -38,11 +37,11 @@ class WishlistScreen extends StatelessWidget {
             return GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, childAspectRatio: 1),
-              itemCount: state.wishlist.products_all.length,
+              itemCount: state.wishlist.products.length,
               itemBuilder: (BuildContext context, int index) {
                 return Center(
                   child: ProductCard(
-                    product:state.wishlist.products_all[index],
+                    products:state.wishlist.products[index],
                     widthFactor: 2.2,
                     //isFav: true,
                   ),

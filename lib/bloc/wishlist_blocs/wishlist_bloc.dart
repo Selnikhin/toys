@@ -35,8 +35,8 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
         emit(
           WishlistLoaded(
             wishlist: Wishlist(
-              products_all: List.from(state.wishlist.products_all)
-                ..add(event.products_all),
+              products: List.from(state.wishlist.products)
+                ..add(event.product),
             ),
           ),
         );
@@ -53,8 +53,8 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
         emit(
           WishlistLoaded(
             wishlist: Wishlist(
-              products_all: List.from(state.wishlist.products_all)
-                ..remove(event.products_all),
+              products: List.from(state.wishlist.products)
+                ..remove(event.product),
             ),
           ),
         );

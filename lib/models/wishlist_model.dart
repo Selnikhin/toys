@@ -2,11 +2,11 @@ import 'package:equatable/equatable.dart';
 import 'package:toys/models/product_model.dart';
 
 class Wishlist extends Equatable {
-  final List<Products> products_all;
+  final List<Product> products;
 
-  const Wishlist({this.products_all = const <Products>[]});
+  const Wishlist({this.products = const <Product>[]});
 
   @override
 
-  List<Object?> get props =>[products_all];
+  List<Object?> get props =>[products];
 }
