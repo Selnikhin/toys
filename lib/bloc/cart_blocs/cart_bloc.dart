@@ -34,7 +34,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       try {
         emit(CartLoaded(
           cart: Cart(
-            products: List.from(state.cart.products)..add(event.product),
+            products: List.from(state.cart.products)..add(event.products),//?
           ),
         ));
       } on Exception {

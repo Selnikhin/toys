@@ -52,12 +52,12 @@ class HomeScreen extends StatelessWidget {
           CarouselSlider(
             options: CarouselOptions(
               aspectRatio: 1.5,
-              viewportFraction: 0.9,
+              viewportFraction: 0.9, //делает изображение шире
               enlargeCenterPage: true,
               enlargeStrategy: CenterPageEnlargeStrategy.height,
               autoPlay: true,
             ),
-            items: Categories.categoriesProd
+            items: Category.categoriesProd
                 .map((category) => CarouselCard(category: category))
                 .toList(),
           ),
@@ -65,7 +65,8 @@ class HomeScreen extends StatelessWidget {
 
           SectionTitle(title: 'Хиты продаж'),
 
-          ProductCarousel(products: Product.products.where((product) => product.isPopular).toList(),
+          ProductCarousel(
+            products: Product.products.where((product) => product.isPopular).toList(),
           ),
         ],
       ),

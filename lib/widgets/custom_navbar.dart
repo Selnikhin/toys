@@ -20,8 +20,8 @@ class CustomNavBar extends StatelessWidget {
                 icon: Icon(FontAwesomeIcons.house, color: Colors.white)),
             IconButton(
               onPressed: () {
-                Navigator.popUntil(context, (route) => route.isCurrent && route.settings.name != '/wishlist' ? false : true);
-                //Navigator.pushNamed(context, '/wishlist');
+                //Navigator.popUntil(context, (route) => route.isCurrent && route.settings.name != '/wishlist' ? false : true);
+                Navigator.pushNamed(context, '/wishlist');
               },
               icon: const Icon(
                 FontAwesomeIcons.heartCircleCheck,

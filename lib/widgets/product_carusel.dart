@@ -21,7 +21,8 @@ class ProductCarousel extends StatelessWidget {
         ),
         scrollDirection: Axis.horizontal,
 
-        itemCount: products.length, // products[index].images.length
+        itemCount: products.length,
+        // products[index].images.length
         itemBuilder: (context, index){
           return Padding(padding: EdgeInsets.only(right: 5),
             child: ProductCard( products: products[index]),);

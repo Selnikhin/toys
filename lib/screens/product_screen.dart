@@ -1,27 +1,38 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:drop_shadow/drop_shadow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toys/bloc/wishlist_blocs/wishlist_bloc.dart';
 import 'package:toys/models/product_model.dart';
 
 import '../bloc/cart_blocs/cart_bloc.dart';
+import '../colors.dart';
 import '../widgets/appbar.dart';
 import '../widgets/carousel_card.dart';
 import '../widgets/custom_navbar.dart';
 
-class ProductScreen extends StatelessWidget {
+class ProductScreen extends StatefulWidget {
   static const String routeName = '/product';
 
   static Route route({required Product product}) {
     return MaterialPageRoute(
       settings: RouteSettings(name: routeName),
-      builder: (context) => ProductScreen(products: product),
+      builder: (context) => ProductScreen(product: product),
     );
   }
 
-  final Product products;
+  final Product product;
 
-  const ProductScreen({required this.products});
+  const ProductScreen({required this.product});
+
+  @override
+  State<ProductScreen> createState() => _ProductScreenState();
+}
+
+class _ProductScreenState extends State<ProductScreen> {
+  int selectedImage = 0;
+  int? selectedColor;
+  int quantity = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -39,27 +50,25 @@ class ProductScreen extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               child: Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20), ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
                 width: size.width,
-                height: size.height / 20 ,
+                height: size.height / 20,
                 child: ElevatedButton(
                   style: ButtonStyle(
                     backgroundColor:
-                    MaterialStatePropertyAll<Color>(Colors.orange),
+                        MaterialStatePropertyAll<Color>(Colors.orange),
                   ),
                   onPressed: () {
-                    final snackBar = SnackBar(content: Text('Добавленно в корзину'));
-                    ScaffoldMessenger.of(context)
-                        .showSnackBar(snackBar);
-                    context
-                        .read<CartBloc>()
-                        .add(AddProduct(products));
+                    final snackBar =
+                        SnackBar(content: Text('Добавленно в корзину'));
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    context.read<CartBloc>().add(AddProduct(widget.product));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text('Добавить в корзину'),
-
                     ],
                   ),
                 ),
@@ -70,38 +79,42 @@ class ProductScreen extends StatelessWidget {
           }
         },
       ),
-      appBar: AppBarCust(title: products.name),
+      appBar: AppBarCust(title: widget.product.name),
       bottomNavigationBar: CustomNavBar(),
       body: ListView(
         children: [
-          Stack(
+          Hero(
+            tag: widget.product.name,
+            child: Container(
+              height: size.height/2 -80,
+              //padding: const EdgeInsets.all(10),
+              child: Image.asset(
+                widget.product.imagesProducov[selectedImage],
+              ),
+            ),
+          ),
+          const SizedBox(height: 5),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              CarouselSlider(
-                options: CarouselOptions(
-                  aspectRatio: 1.1,
-                  viewportFraction: 0.9,
-                  enlargeCenterPage: true,
-                  enlargeStrategy: CenterPageEnlargeStrategy.height,
-                  autoPlay: true,
-                ),
-                items:
-                [
-                  CarouselCard(
-                    product: products,
-                  ),
-                ],
-              ),Positioned(right: 50,top: 10,
-                  child: IconButton(
-                  onPressed: (){ context
-                      .read<WishlistBloc>()
-                      .add(AddPrToWishlist(products));
-                  final snackBar =
-                  SnackBar(content: Text('Добавленно в избранное'));
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
-
-                  },icon: Icon(Icons.favorite_border_outlined,size: 35,color: Colors.red,)),
-
-                    ),
+              ...List.generate(
+                  widget.product.imagesProducov.length,
+                  (index) => GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            selectedImage = index;
+                          });
+                        },
+                        child: Container(
+                          height: 100,
+                          width: 100,
+                          child: AspectRatio(
+                            aspectRatio: 1,
+                            child: Image.asset(
+                                widget.product.imagesProducov[index]),
+                          ),
+                        ),
+                      ))
             ],
           ),
           Padding(
@@ -111,7 +124,7 @@ class ProductScreen extends StatelessWidget {
                 Center(
                   child: Container(
                     margin: EdgeInsets.all(5),
-                    width: size.width ,
+                    width: size.width,
                     height: size.height / 28,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -120,8 +133,8 @@ class ProductScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     child: Center(
                       child: Text(
-                        '${products.price} Руб',
-                        style: TextStyle(color: Colors.white, fontSize:20),
+                        '${widget.product.price} Руб',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
                   ),
@@ -129,7 +142,6 @@ class ProductScreen extends StatelessWidget {
               ],
             ),
           ),
-
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: ExpansionTile(
