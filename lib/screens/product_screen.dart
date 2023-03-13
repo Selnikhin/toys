@@ -1,14 +1,8 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:drop_shadow/drop_shadow.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:toys/bloc/wishlist_blocs/wishlist_bloc.dart';
 import 'package:toys/models/product_model.dart';
-
 import '../bloc/cart_blocs/cart_bloc.dart';
-import '../colors.dart';
 import '../widgets/appbar.dart';
-import '../widgets/carousel_card.dart';
 import '../widgets/custom_navbar.dart';
 
 class ProductScreen extends StatefulWidget {
@@ -86,7 +80,7 @@ class _ProductScreenState extends State<ProductScreen> {
           Hero(
             tag: widget.product.name,
             child: Container(
-              height: size.height/2 -80,
+              height: size.height / 2 - 80,
               //padding: const EdgeInsets.all(10),
               child: Image.asset(
                 widget.product.imagesProducov[selectedImage],
