@@ -31,8 +31,8 @@ class CartProductCard extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Image.asset(
                 products.images,
-                width: 140,
-                height: 130,
+                width: 150,
+                height: 150,
                 fit: BoxFit.cover,
               ),
             ),

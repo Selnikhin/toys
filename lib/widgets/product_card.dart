@@ -63,15 +63,15 @@ class ProductCard extends StatelessWidget {
             ),
             Container(
               width: size.width / 2.5 - 20,
-              height: 55,
+              height: 53,
               child: Column(
                 children: [
                   SizedBox(height: 3),
                   Text(
                     products.name,
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 14, ),
                   ),
-                  //SizedBox(height: 3),
+
                   Text(
                     '${products.price} руб',
                     style: TextStyle(color: Colors.blue, fontSize: 14),
