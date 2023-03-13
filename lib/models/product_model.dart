@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:equatable/equatable.dart';
 
 class Product extends Equatable {
@@ -55,7 +53,7 @@ class Product extends Equatable {
       images: 'assets/images/toys/brown_bear/brown_bear 0.png',
       listImagesPr: [],
     ),
-    Product(
+    Products(
       category: 'Вязанные игрушки',
       isPopular: true,
       name: 'Серый зайка',
