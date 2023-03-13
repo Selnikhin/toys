@@ -42,7 +42,7 @@ class CartProductCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(products.name,style: TextStyle(fontSize: 14),),
-                  SizedBox(height: 10),
+                  SizedBox(height: 5),
                   Text('${products.price}',style: TextStyle(color: Colors.blue,fontSize: 20),),
                 ],
               ),

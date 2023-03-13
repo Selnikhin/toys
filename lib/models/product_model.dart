@@ -8,7 +8,7 @@ class Product extends Equatable {
   final String category;
   final bool isPopular;
   final String images;
-  final List<String> imagesProducov;
+  final List<String> listImagesPr;
 
   Product({
     required this.name,
@@ -16,12 +16,12 @@ class Product extends Equatable {
     required this.images,
     required this.category,
     required this.isPopular,
-    required this.imagesProducov,
+    required this.listImagesPr,
   });
 
   @override
   List<Object?> get props =>
-      [name, price, images, category, isPopular, imagesProducov];
+      [name, price, images, category, isPopular, listImagesPr];
 
   static List<Product> products = [
     Product(
@@ -30,7 +30,7 @@ class Product extends Equatable {
         name: 'Бежевый мишка',
         price: 3000,
         images: 'assets/images/toys/beige_bear/beige_bear 0.png',
-        imagesProducov: [
+        listImagesPr: [
           'assets/images/toys/beige_bear/beige_bear 0.png',
           'assets/images/toys/beige_bear/beige_bear 1.png',
           'assets/images/toys/beige_bear/beige_bear 2.png',
@@ -41,7 +41,7 @@ class Product extends Equatable {
       name: 'Мишка в комбезе',
       price: 3500,
       images: 'assets/images/toys/blue_bear/blue_bear 0.png',
-      imagesProducov: const [
+      listImagesPr: const [
         'assets/images/toys/blue_bear/blue_bear 0.png',
         'assets/images/toys/blue_bear/blue_bear 1.png',
         'assets/images/toys/blue_bear/blue_bear 2.png',
@@ -53,7 +53,7 @@ class Product extends Equatable {
       name: 'Коричневый мишка',
       price: 2000,
       images: 'assets/images/toys/brown_bear/brown_bear 0.png',
-      imagesProducov: [],
+      listImagesPr: [],
     ),
     Product(
       category: 'Вязанные игрушки',
@@ -61,7 +61,11 @@ class Product extends Equatable {
       name: 'Серый зайка',
       price: 3000,
       images: 'assets/images/toys/grey_rabbit/grey_rabbit 0.png',
-      imagesProducov: [],
+      listImagesPr: [
+        'assets/images/toys/grey_rabbit/grey_rabbit 0.png',
+        'assets/images/toys/grey_rabbit/grey_rabbit 1.png',
+        'assets/images/toys/grey_rabbit/grey_rabbit 2.png',
+      ],
     ),
     Product(
       category: 'Вязанные игрушки',
@@ -69,7 +73,11 @@ class Product extends Equatable {
       name: 'Мишка в платице',
       price: 3500,
       images: 'assets/images/toys/pink_bear/pink_bear 0.png',
-      imagesProducov: [],
+      listImagesPr: [
+        'assets/images/toys/pink_bear/pink_bear 0.png',
+        'assets/images/toys/pink_bear/pink_bear 1.png',
+        'assets/images/toys/pink_bear/pink_bear 2.png',
+      ],
     ),
     Product(
       category: 'Вязанные игрушки',
@@ -77,7 +85,10 @@ class Product extends Equatable {
       name: 'Зайка и Мишка',
       price: 3500,
       images: 'assets/images/toys/rabbit_and_bear/rabbit_and_bear 0.png',
-      imagesProducov: [],
+      listImagesPr: [
+        'assets/images/toys/rabbit_and_bear/rabbit_and_bear 0.png',
+        'assets/images/toys/rabbit_and_bear/rabbit_and_bear 1.png',
+      ],
     ),
     Product(
       category: 'Вязанные игрушки',
@@ -85,7 +96,11 @@ class Product extends Equatable {
       name: 'Желтый мишка',
       price: 2000,
       images: 'assets/images/toys/yellow_bear/yellow_bear 0.png',
-      imagesProducov: [],
+      listImagesPr: [
+        'assets/images/toys/yellow_bear/yellow_bear 0.png',
+        'assets/images/toys/yellow_bear/yellow_bear 1.png',
+        'assets/images/toys/yellow_bear/yellow_bear 2.png',
+        ],
     ),
     Product(
       category: 'Вязанные сумки',
@@ -93,7 +108,11 @@ class Product extends Equatable {
       name: 'Голубая сумка',
       price: 4500,
       images: 'assets/images/bags/blue_bag/blue_bag 0.png',
-      imagesProducov: [],
+      listImagesPr: [
+        'assets/images/bags/blue_bag/blue_bag 0.png',
+        'assets/images/bags/blue_bag/blue_bag 1.png',
+        'assets/images/bags/blue_bag/blue_bag 2.png',
+      ],
     ),
     Product(
       category: 'Вязанные сумки',
@@ -101,7 +120,11 @@ class Product extends Equatable {
       name: 'Синий клатч',
       price: 3000,
       images: 'assets/images/bags/blue_clutch/blue_clutch 0.png',
-      imagesProducov: [],
+      listImagesPr: [
+        'assets/images/bags/blue_clutch/blue_clutch 0.png',
+        'assets/images/bags/blue_clutch/blue_clutch 1.png',
+        'assets/images/bags/blue_clutch/blue_clutch 2.png',
+      ],
     ),
     Product(
       category: 'Вязанные сумки',
@@ -109,15 +132,23 @@ class Product extends Equatable {
       name: 'Бежевая сумка',
       price: 4000,
       images: 'assets/images/bags/brown_bag/brown_bag 0.png',
-      imagesProducov: [],
+      listImagesPr: [
+        'assets/images/bags/brown_bag/brown_bag 0.png',
+        'assets/images/bags/brown_bag/brown_bag 1.png',
+        'assets/images/bags/brown_bag/brown_bag 2.png',
+      ],
     ),
     Product(
       category: 'Вязанные сумки',
       isPopular: true,
       name: 'Красная сумка',
       price: 4500,
-      images: 'assets/images/bags/red_bag/red_bag 1.png',
-      imagesProducov: [],
+      images: 'assets/images/bags/red_bag/red_bag 0.png',
+      listImagesPr: [
+        'assets/images/bags/red_bag/red_bag 0.png',
+        'assets/images/bags/red_bag/red_bag 1.png',
+        'assets/images/bags/red_bag/red_bag 2.png',
+      ],
     ),
     Product(
       category: 'Вязанные сумки',
@@ -125,7 +156,10 @@ class Product extends Equatable {
       name: 'Круглая сумка',
       price: 3500,
       images: 'assets/images/bags/circular_bag/circular_bag 0.png',
-      imagesProducov: [],
+      listImagesPr: [
+        'assets/images/bags/circular_bag/circular_bag 0.png',
+        'assets/images/bags/circular_bag/circular_bag 1.png',
+      ],
     ),
     Product(
       category: 'Вязанные сумки',
@@ -133,7 +167,10 @@ class Product extends Equatable {
       name: 'Рюкзак',
       price: 3500,
       images: 'assets/images/bags/backpack/backpack 0.png',
-      imagesProducov: [],
+      listImagesPr: [
+        'assets/images/bags/backpack/backpack 0.png',
+        'assets/images/bags/backpack/backpack 1.png',
+      ],
     ),
     Product(
       category: 'Подарочные наборы',
@@ -141,16 +178,24 @@ class Product extends Equatable {
       name: 'Набор для мальчика N1',
       price: 1490,
       images:
-          'assets/images/podarok/Boys_1/podarochnyj-nabor-dlya-malchika-plyushevyj-medved-1-1.jpeg',
-      imagesProducov: [],
+          'assets/images/podarok/Boys_1/podarochnyj-nabor-dlya-malchika-plyushevyj-medved 0.jpeg',
+      listImagesPr: [
+        'assets/images/podarok/Boys_1/podarochnyj-nabor-dlya-malchika-plyushevyj-medved 0.jpeg',
+        'assets/images/podarok/Boys_1/podarochnyj-nabor-dlya-malchika-plyushevyj-medved 1.jpeg',
+        'assets/images/podarok/Boys_1/podarochnyj-nabor-dlya-malchika-plyushevyj-medved 2.jpeg',
+      ],
     ),
     Product(
       category: 'Подарочные наборы',
       isPopular: true,
       name: 'Набор для мальчика N2',
       price: 1490,
-      images: 'assets/images/podarok/Boys_2/photo_2021-10-19_21-49-00.jpeg',
-      imagesProducov: [],
+      images: 'assets/images/podarok/Boys_2/photo_0.jpeg',
+      listImagesPr: [
+        'assets/images/podarok/Boys_2/photo_0.jpeg',
+        'assets/images/podarok/Boys_2/photo_1.jpeg',
+        'assets/images/podarok/Boys_2/photo_2.jpeg',
+      ],
     ),
     Product(
       category: 'Подарочные наборы',
@@ -158,8 +203,12 @@ class Product extends Equatable {
       name: 'Набор для девочки N1',
       price: 1490,
       images:
-          'assets/images/podarok/Girls_1/podarochnyj-nabor-dlya-devochki-plyusheyj-mishka-1.jpeg',
-      imagesProducov: [],
+          'assets/images/podarok/Girls_1/podarochnyj-nabor-dlya-devochki-plyusheyj-mishka 0.jpeg',
+      listImagesPr: [
+        'assets/images/podarok/Girls_1/podarochnyj-nabor-dlya-devochki-plyusheyj-mishka 0.jpeg',
+        'assets/images/podarok/Girls_1/podarochnyj-nabor-dlya-devochki-plyusheyj-mishka 1.jpeg',
+        'assets/images/podarok/Girls_1/podarochnyj-nabor-dlya-devochki-plyusheyj-mishka 2.jpeg',
+      ],
     ),
     Product(
       category: 'Подарочные наборы',
@@ -167,24 +216,12 @@ class Product extends Equatable {
       name: 'Набор для девочки N2',
       price: 1490,
       images:
-          'assets/images/podarok/Girls_2/podarochnyj-nabor-dlya-devochki-plyusheyj-medved-1.jpeg',
-      imagesProducov: [],
+          'assets/images/podarok/Girls_2/podarochnyj-nabor-dlya-devochki-plyusheyj-medved 0.jpeg',
+      listImagesPr: [
+        'assets/images/podarok/Girls_2/podarochnyj-nabor-dlya-devochki-plyusheyj-medved 0.jpeg',
+        'assets/images/podarok/Girls_2/podarochnyj-nabor-dlya-devochki-plyusheyj-medved 1.jpeg',
+        'assets/images/podarok/Girls_2/podarochnyj-nabor-dlya-devochki-plyusheyj-medved 2.jpeg',],
     ),
   ];
 }
 
-final List<String> imagesProducov2 = [
-  'https://images.unsplash.com/photo-1586882829491-b81178aa622e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
-  'https://images.unsplash.com/photo-1586871608370-4adee64d1794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2862&q=80',
-  'https://images.unsplash.com/photo-1586901533048-0e856dff2c0d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
-  'https://images.unsplash.com/photo-1586902279476-3244d8d18285?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80',
-  'https://images.unsplash.com/photo-1586943101559-4cdcf86a6f87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1556&q=80',
-  'https://images.unsplash.com/photo-1586951144438-26d4e072b891?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
-  'https://images.unsplash.com/photo-1586953983027-d7508a64f4bb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80',
-];
-
-final List<String> imagesProducov3 = [
-  'assets/images/toys/blue_bear/blue_bear 0.png',
-  'assets/images/toys/blue_bear/blue_bear 1.png',
-  'assets/images/toys/blue_bear/blue_bear 2.png',
-];

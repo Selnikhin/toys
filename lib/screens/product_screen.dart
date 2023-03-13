@@ -80,10 +80,11 @@ class _ProductScreenState extends State<ProductScreen> {
           Hero(
             tag: widget.product.name,
             child: Container(
-              height: size.height / 2 - 80,
+              height: size.height / 2 - 40,
               //padding: const EdgeInsets.all(10),
               child: Image.asset(
-                widget.product.imagesProducov[selectedImage],
+                widget.product.listImagesPr[selectedImage],
+                 fit: BoxFit.cover,
               ),
             ),
           ),
@@ -92,7 +93,7 @@ class _ProductScreenState extends State<ProductScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ...List.generate(
-                  widget.product.imagesProducov.length,
+                  widget.product.listImagesPr.length,
                   (index) => GestureDetector(
                         onTap: () {
                           setState(() {
@@ -105,7 +106,7 @@ class _ProductScreenState extends State<ProductScreen> {
                           child: AspectRatio(
                             aspectRatio: 1,
                             child: Image.asset(
-                                widget.product.imagesProducov[index]),
+                                widget.product.listImagesPr[index],fit: BoxFit.cover,),
                           ),
                         ),
                       ))

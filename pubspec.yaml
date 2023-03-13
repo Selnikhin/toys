@@ -44,8 +44,6 @@ dependencies:
   flutter_bloc: ^8.1.2
   equatable: ^2.0.5
   favorite_button: ^0.0.4
-
-  drop_shadow: ^0.0.2+1
   flutter_slidable: ^2.0.0
 
 dev_dependencies:
