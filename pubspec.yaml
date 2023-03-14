@@ -86,7 +86,10 @@ flutter:
     - assets/images/bags/circular_bag/
     - assets/images/bags/red_bag/
     - assets/images/bags/backpack/
-    - assets/images/tricotage/
+    - assets/images/tricotage/korzina_pink/
+    - assets/images/tricotage/korzina_white/
+    - assets/images/tricotage/lulka/
+    - assets/images/tricotage/racuska/
     - assets/images/podarok/Boys_1/
     - assets/images/podarok/Boys_2/
     - assets/images/podarok/Girls_1/

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:toys/models/product_model.dart';
 import '../bloc/cart_blocs/cart_bloc.dart';
+import '../bloc/wishlist_blocs/wishlist_bloc.dart';
 import '../widgets/appbar.dart';
 import '../widgets/custom_navbar.dart';
 
@@ -11,13 +12,13 @@ class ProductScreen extends StatefulWidget {
   static Route route({required Product product}) {
     return MaterialPageRoute(
       settings: RouteSettings(name: routeName),
-      builder: (context) => ProductScreen(product: product),
+      builder: (context) => ProductScreen(products: product),
     );
   }
 
-  final Product product;
+  final Product products;
 
-  const ProductScreen({required this.product});
+  const ProductScreen({required this.products});
 
   @override
   State<ProductScreen> createState() => _ProductScreenState();
@@ -57,7 +58,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     final snackBar =
                         SnackBar(content: Text('Добавленно в корзину'));
                     ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                    context.read<CartBloc>().add(AddProduct(widget.product));
+                    context.read<CartBloc>().add(AddProduct(widget.products));
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -73,43 +74,64 @@ class _ProductScreenState extends State<ProductScreen> {
           }
         },
       ),
-      appBar: AppBarCust(title: widget.product.name),
+      appBar: AppBarCust(title: widget.products.name),
       bottomNavigationBar: CustomNavBar(),
       body: ListView(
         children: [
           Hero(
-            tag: widget.product.name,
+            tag: widget.products.name,
             child: Container(
               height: size.height / 2 - 40,
               //padding: const EdgeInsets.all(10),
               child: Image.asset(
-                widget.product.listImagesPr[selectedImage],
-                 fit: BoxFit.cover,
+                widget.products.listImagesPr[selectedImage],
+                fit: BoxFit.cover,
               ),
             ),
+          ),
+          Positioned(
+            right: 50,
+            top: 10,
+            child: IconButton(
+                onPressed: () {
+                    context
+                      .read<WishlistBloc>()
+                      .add(AddPrToWishlist(widget.products));
+                  final snackBar =
+                  SnackBar(content: Text('Добавленно в избранное'));
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
+                icon: Icon(
+                  Icons.favorite_border_outlined,
+                  size: 35,
+                  color: Colors.red,
+                )),
           ),
           const SizedBox(height: 5),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ...List.generate(
-                  widget.product.listImagesPr.length,
-                  (index) => GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedImage = index;
-                          });
-                        },
-                        child: Container(
-                          height: 100,
-                          width: 100,
-                          child: AspectRatio(
-                            aspectRatio: 1,
-                            child: Image.asset(
-                                widget.product.listImagesPr[index],fit: BoxFit.cover,),
-                          ),
-                        ),
-                      ))
+                widget.products.listImagesPr.length,
+                (index) => GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selectedImage = index;
+                    });
+                  },
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: Image.asset(
+                        widget.products.listImagesPr[index],
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
           Padding(
@@ -128,7 +150,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     alignment: Alignment.center,
                     child: Center(
                       child: Text(
-                        '${widget.product.price} Руб',
+                        '${widget.products.price} Руб',
                         style: TextStyle(color: Colors.white, fontSize: 20),
                       ),
                     ),
@@ -147,15 +169,7 @@ class _ProductScreenState extends State<ProductScreen> {
               ),
               children: [
                 ListTile(
-                  title: Text(
-                    'Вязаный плюшевый мишка идеально подойдет как подарок для ребенка любого возраста.'
-                    ' Эта мягкая игрушка станет приятным спутником на прогулке и любимым другом во время сюжетных игр или сна.'
-                    ' Вязаный мишка выполнен в ручную и декорирован  синим комбезом. Он легко впишется в любой интерьер и поможет создать уютную атмосферу в детской комнате.'
-                    ' Так же милый плюшевый зайка амигуруми может быть отличным подарком любимой девушке или подруге на памятную дату.',
-                    style: TextStyle(
-                      fontFamily: 'Sriracha',
-                    ),
-                  ),
+                  title: Text('${widget.products.description}'),
                 ),
               ],
             ),
@@ -170,12 +184,7 @@ class _ProductScreenState extends State<ProductScreen> {
               ),
               children: [
                 ListTile(
-                  title: Text(
-                    'Высота            40см \n ширина          30см \n Цвета        Бежевый,синий',
-                    style: TextStyle(
-                      fontFamily: 'Sriracha',
-                    ),
-                  ),
+                  title: Text('${widget.products.parameters}'),
                 ),
               ],
             ),

@@ -36,7 +36,7 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
           WishlistLoaded(
             wishlist: Wishlist(
               products: List.from(state.wishlist.products)
-                ..add(event.product),
+                ..add(event.products),
             ),
           ),
         );
@@ -54,7 +54,7 @@ class WishlistBloc extends Bloc<WishlistEvent, WishlistState> {
           WishlistLoaded(
             wishlist: Wishlist(
               products: List.from(state.wishlist.products)
-                ..remove(event.product),
+                ..remove(event.products),
             ),
           ),
         );

@@ -22,7 +22,7 @@ class Category extends Equatable {
         image: 'assets/images/bags/red_bag/red_bag 0.png'),
     Category(
         name: "Трикотаж",
-        image: 'assets/images/tricotage/korzina-karmashek-na-stul-seryj-1.jpeg'),
+        image: 'assets/images/tricotage/korzina_pink/korzina-karmashek-na-stul-rozovyj-0.jpg'),
     Category(
         name: "Подарочные наборы",
         image: 'assets/images/podarok/Boys_1/podarochnyj-nabor-dlya-malchika-plyushevyj-medved 0.jpeg'),
