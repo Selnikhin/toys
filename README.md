@@ -1,16 +1,6 @@
-# toys
+Bags and Toys
 
-A new Flutter project.
+This is my newFlutter project.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Knitted Dreams (Вязаные фантазии) - это приложение магазин вязаных изделий, таких как игрушки, сумки, трикотаж.  
+<img width="384" alt="1" src="https://user-images.githubusercontent.com/91333676/225847275-680f4ef3-5806-4971-91ee-f3c224092503.png">
