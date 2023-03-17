@@ -9,7 +9,7 @@ This is my newFlutter project.
 В приложении применялись технологии: 
  1. flutter_bloc
  2. Navigator
- 3. Provaider
+ 3. Provider
 
 Использовались такие зависимости как:
 1. carousel_slider: ^4.2.1
@@ -27,7 +27,7 @@ This is my newFlutter project.
 В РАЗРАБОТКЕ:
 
 1. Перевести локальные ресурсы в Firebase
-2. Сделать аунтификацию через Firebase
+2. Сделать аунтификацию через Firebase Authentication
 3. Сделать страницу "Оформления заказов" ( Возможно с подключением оплаты картами) 
 4. Загрузить приложение в Apple store и\или в Play Market
 
