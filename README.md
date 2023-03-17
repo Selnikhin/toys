@@ -14,3 +14,8 @@ Knitted Dreams (Вязаные фантазии) - это приложение �
 <img width="380" alt="4" src="https://user-images.githubusercontent.com/91333676/225848665-12fb10b5-5af5-42f2-b3b4-ca2722f35167.png">
 <img width="379" alt="5" src="https://user-images.githubusercontent.com/91333676/225848989-ca8114e3-b298-4c79-9c92-bfa8a08b3a29.png">
 <img width="373" alt="6" src="https://user-images.githubusercontent.com/91333676/225849049-f0f2efd5-2cba-405e-a11d-7db0f47cf67a.png">
+
+Страница избранного и корзины позволяет добавлять и удалять товары а также можно увидиеть полную стоимость товаров
+<img width="380" alt="8" src="https://user-images.githubusercontent.com/91333676/225850381-da0e1659-98e1-492c-8b92-52110ea55d97.png">
+<img width="385" alt="9" src="https://user-images.githubusercontent.com/91333676/225850407-dad7a7e1-a6f7-4cd5-9312-a641a13cc478.png">
+
